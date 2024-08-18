@@ -1,0 +1,112 @@
+<html lang="vi"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lichsuthanhtoan.css">
+    </head>
+    <body>
+        <div class="background-section">
+            <div class="content">
+    <p class="text-percent">
+<div class="c-content-title-1">
+    <h3 class="c-font-uppercase c-font-bold">Lịch sử thanh toán</h3>
+    <div class="c-line-left"></div>
+    <form class="form-horizontal form-find m-b-20" role="form" method="get">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group m-b-10 c-square">
+                    <span class="input-group-addon" id="basic-addon1">Mã đơn hàng</span>
+                    <input type="text" class="form-control c-square c-theme" name="id" value="" autofocus="" placeholder="Mã đơn hàng">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group m-b-10 c-square">
+                    <span class="input-group-addon" id="basic-addon1">Thực đơn</span>
+
+                    <select id="group_id" name="group_id" class="form-control c-square c-theme">
+                        <option value="">-- Tất cả các thực đơn --</option>
+                        <option value="772"> Cà phê đen</option>
+                        <option value="904">Cà phê sữa</option>
+                        <option value="889"> Bạc sĩu</option>
+                        <option value="797"> Cacao</option>
+                        <option value="865"> Trà olong</option>
+                        <option value="866"> Trà Đào</option>
+                        <option value="787"> Trà vãi</option>
+                        <option value="773"> Trà liton</option>
+                        <option value="900"> Bánh bông lan</option>
+                        <option value="788"> Bánh tiramisu</option>
+                        <option value="777"> Bánh Cookies</option>
+                        <option value="891"> Bánh Flan</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group m-b-10 c-square">
+                    <span class="input-group-addon" id="basic-addon1">Trạng thái</span>
+                    <select name="status" class="form-control c-square c-theme">.
+                        <option value=""> Tất cả  </option>                                                                                                                 <option value="1">
+Đã thanh toán
+</option>                                              
+<option value="2">Hủy đơn
+</option>                                                                                                                                                                                                                                                                                                                                       </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group m-b-10 c-square">
+                    <div class="input-group date date-picker" data-date-format="dd/mm/yyyy" data-rtl="false">
+                    <span class="input-group-btn">
+                    <button class="btn default c-btn-square p-l-10 p-r-10" type="button"><i class="fa fa-calendar"></i></button>
+                    </span>
+                        <input type="text" class="form-control c-square c-theme" name="started_at" autocomplete="off" autofocus="" placeholder="Từ ngày" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group m-b-10 c-square">
+                    <div class="input-group date date-picker" data-date-format="dd/mm/yyyy" data-rtl="false">
+                    <span class="input-group-btn">
+                    <button class="btn default c-btn-square p-l-10 p-r-10" type="button"><i class="fa fa-calendar"></i></button>
+                    </span>
+                        <input type="text" class="form-control c-square c-theme" name="ended_at" autocomplete="off" placeholder="Đến ngày" value="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="input-group m-b-10 c-square">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="submit" class="btn c-theme-btn c-btn-square m-b-10" value="Tìm kiếm">
+                <a class="btn c-btn-square m-b-10 btn-danger" href="#">Tất cả</a>
+            </div>
+        </div>
+    </form>    
+</div>
+<table class="table table-hover table-custom-res">
+    <thead>
+    <tr>
+<th>#</th>
+<th>Tên Món</th>
+<th>Số Lượng</th>
+<th>Giá</th>
+<th>Trạng Thái</th>
+<th>Thời Gian</th>
+</tr>
+    </thead>
+    <tbody>
+<tr>
+        </tr><tr><td colspan="7" class="text-center"><p>Chưa có đơn thanh toán nào</p></td></tr>
+     </p>
+</tbody>
+</table>
+
+
+</div></div>
+</body>

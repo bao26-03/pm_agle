@@ -1,0 +1,68 @@
+.mgb--20 {
+    margin-bottom: 20px;
+}
+.title {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.payment-method__item{
+    align-items: center;
+    margin-bottom: 4px;
+    border: 1px solid #d9d9d9;
+    border-radius: 58px;
+    cursor: pointer;
+    display: flex;
+    opacity: 5;
+    padding: 15px 20px;
+    transition: all .2s;
+    width:100%;
+    margin: 10px;
+}
+.custom-radio {
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    display: block;
+    flex: 0 0 20px;
+    height: 20px;
+    position: relative;
+    transition: all .2s;
+    width: 20px;
+}
+.custom-button {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 12px; 
+    transition: background-color 0.3s; 
+}
+
+.custom-button:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+.background-section {
+    width: 100%; /* Chiều rộng của phần tử */
+    height: 615px; /* Chiều cao của phần tử */
+    background-image: url('ảnh/Hinhnen-Coffee-3.jpg'); /* Đường dẫn đến hình ảnh */
+    background-size: cover; /* Bao phủ toàn bộ phần tử */
+    background-position: center; /* Căn giữa hình ảnh */
+    background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+    position: relative; /* Để nội dung bên trong có thể nằm trên hình nền */
+    z-index: 0; /* Đảm bảo phần tử có hình nền không bị che khuất */
+}
+.content {
+    position: absolute; /* Để nội dung nằm trên hình nền */
+    z-index: 1; /* Đặt mức z-index để nội dung nằm trên hình nền */
+    top: 50%; /* Căn giữa nội dung theo chiều dọc */
+    left: 20%; /* Căn giữa nội dung theo chiều ngang */
+    transform: translate(-50%, -50%); /* Căn giữa nội dung chính xác */
+    color: white; /* Màu chữ trắng để nổi bật trên nền */
+    text-align: center;
+}
+

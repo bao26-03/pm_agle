@@ -1,0 +1,62 @@
+.background-section {
+    width: 100%; /* Chiều rộng của phần tử */
+    height: 600px; /* Chiều cao của phần tử */
+    background-image: url('ảnh/Hinhnen-Coffee-3.jpg'); /* Đường dẫn đến hình ảnh */
+    background-size: cover; /* Bao phủ toàn bộ phần tử */
+    background-position: center; /* Căn giữa hình ảnh */
+    background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+    position: relative; /* Để nội dung bên trong có thể nằm trên hình nền */
+    z-index: 0; /* Đảm bảo phần tử có hình nền không bị che khuất */
+}
+h3.c-font-uppercase.c-font-bold {
+    font-size: 170%;
+}
+.content {
+    position: absolute; /* Để nội dung nằm trên hình nền */
+    z-index: 1; /* Đặt mức z-index để nội dung nằm trên hình nền */
+    top: 35%; /* Căn giữa nội dung theo chiều dọc */
+    left: 50%; /* Căn giữa nội dung theo chiều ngang */
+    transform: translate(-50%, -50%); /* Căn giữa nội dung chính xác */
+    color: white; /* Màu chữ trắng để nổi bật trên nền */
+    text-align: center;
+    width: 100%;
+}
+
+.m-b-20 {
+    margin-bottom: 24px !important;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.input-group-addon{
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 21px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 12px; 
+    transition: background-color 0.3s; 
+}
+input.form-control.c-square.c-theme {
+    width: 35%;
+    height: 40px;
+    font-size: 126%;
+}
+select#group_id {
+    height: 40px;
+    font-size: 126%;
+}
+select.form-control.c-square.c-theme {
+    height: 40px;
+    font-size: 126%;
+}
+table.table.table-hover.table-custom-res {
+    width: 40%;
+    color: white;
+    font-size: 126%;
+}
