@@ -1,0 +1,111 @@
+<html lang="vi"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên kết HTML với CSS</title>
+    <link rel="stylesheet" href="phe.css">
+<div class="container">s
+	<div class="home-slider slick-frame slick-initialized slick-slider slick-dotted" role="toolbar">
+		
+	<ul class="slick-dots" style="display: flex;" role="tablist"><li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00"><button type="button" data-role="none" role="button" tabindex="0" fdprocessedid="vjjpr1">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01" class=""><button type="button" data-role="none" role="button" tabindex="0" fdprocessedid="4f9d5p">2</button></li></ul></div>
+</div>
+
+<section class="awe-section-3">	
+	<section class="section_uu_dai">
+	<div class="container">
+		<div class="title_uu_dai">
+			<b>Ưu đãi của bạn</b>
+		</div>
+		<div class="list-promotion">
+			<div class="promotion-item">
+				<div class="promotion-item__inner">	
+					<a href="" title="<b>Voucher 10K</b>">
+						<span class="title"><b>Voucher 10K</b></span>
+						<span class="content"><p style="font-size: 13px; text-decoration: none;"> Nhập mã 10T2 tại mục Thanh Toán, áp dụng cho đơn từ 499,000đ</p></span>		
+					</a>
+					<div class="copy_discount">
+						<p class="code_zip">
+							10T2
+						</p>
+						<button class="btn dis_copy_2" data-copy="10T2" fdprocessedid="bsi536">
+							<span>Lưu</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="promotion-item">
+				<div class="promotion-item__inner">	
+					<a href="" title="<b>Voucher 20K</b>">
+						<span class="title"><b>Voucher 20K</b></span>
+						<span class="content"><p style="font-size: 13px; text-decoration: none;"> Nhập mã 20M2 tại mục Thanh Toán, áp dụng cho đơn từ 799,000đ</p></span>		
+					</a>
+					<div class="copy_discount">
+						<p class="code_zip">
+							20M2
+						</p>
+						<button class="btn dis_copy_2" data-copy="20M2" fdprocessedid="4hkv2f">
+							<span>Lưu</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="promotion-item">
+				<div class="promotion-item__inner">	
+					<a href="" title="<b>Voucher 50K</b>">
+						<span class="title"><b>Voucher 50K</b></span>
+						<span class="content"><p style="font-size: 13px; text-decoration: none;"> Nhập mã VC50K tại mục Thanh Toán, áp dụng cho đơn từ 1,369,000đ</p></span>		
+					</a>
+					<div class="copy_discount">
+						<p class="code_zip">
+							VC50K
+						</p>
+						<button class="btn dis_copy_2" data-copy="VC50K" fdprocessedid="9azwal">
+							<span>Lưu</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="promotion-item">
+				<div class="promotion-item__inner">	
+					<a href="" title="<b>Voucher 100K</b>">
+						<span class="title"><b>Voucher 100K</b></span>
+						<span class="content"><p style="font-size: 13px; text-decoration: none;"> Nhập mã VC100K tại mục Thanh Toán, áp dụng cho đơn từ 1,999,000đ</p></span>		
+					</a>
+					<div class="copy_discount">
+						<p class="code_zip">
+							VC100K
+						</p>
+						<button class="btn dis_copy_2" data-copy="VC100K" fdprocessedid="a4wdfd">
+							<span>Lưu</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script>
+	$(document).on('click', '.dis_copy_2',function(e){
+		e.preventDefault();
+		var copyText = $(this).attr('data-copy');
+		var copyTextarea = document.createElement("textarea");
+		copyTextarea.textContent = copyText;
+		document.body.appendChild(copyTextarea);
+		copyTextarea.select();
+		document.execCommand("copy"); 
+		document.body.removeChild(copyTextarea);
+		var cur_text = $(this).text();
+		var $cur_btn = $(this);
+		$(this).addClass("disabled");
+		$(this).text("Đã lưu!");
+		$(this).parent().addClass('active');
+		setTimeout(function(){
+			$cur_btn.removeClass("disabled");
+			$cur_btn.parent().removeClass('active');
+			$cur_btn.text(cur_text);
+		},2500)
+	})
+</script>
+</section>
