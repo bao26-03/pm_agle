@@ -1,0 +1,52 @@
+-- Tạo cơ sở dữ liệu
+CREATE DATABASE IF NOT EXISTS QuanLyCafe;
+USE QuanLyCafe;
+
+-- Tạo bảng khách hàng
+CREATE TABLE IF NOT EXISTS KhachHang (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ten VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    so_dien_thoai VARCHAR(15),
+    dia_chi TEXT,
+    ngay_tao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tạo bảng đơn hàng
+CREATE TABLE IF NOT EXISTS DonHang (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    khach_hang_id INT,
+    ngay_dat TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    tong_tien DECIMAL(10, 2),
+    FOREIGN KEY (khach_hang_id) REFERENCES KhachHang(id)
+);
+
+-- Tạo bảng chi tiết đơn hàng
+CREATE TABLE IF NOT EXISTS ChiTietDonHang (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    don_hang_id INT,
+    ten_san_pham VARCHAR(100),
+    so_luong INT,
+    gia DECIMAL(10, 2),
+    FOREIGN KEY (don_hang_id) REFERENCES DonHang(id)
+);
+
+-- Thêm dữ liệu mẫu vào bảng khách hàng
+INSERT INTO KhachHang (ten, email, so_dien_thoai, dia_chi)
+VALUES 
+    ('Nguyen Van A', 'nguyenvana@example.com', '0901234567', '123 Duong ABC, TP.HCM'),
+    ('Tran Thi B', 'tranthib@example.com', '0912345678', '456 Duong XYZ, TP.HCM');
+
+-- Thêm dữ liệu mẫu vào bảng đơn hàng
+INSERT INTO DonHang (khach_hang_id, tong_tien)
+VALUES 
+    (1, 150000),
+    (2, 200000);
+
+-- Thêm dữ liệu mẫu vào bảng chi tiết đơn hàng
+INSERT INTO ChiTietDonHang (don_hang_id, ten_san_pham, so_luong, gia)
+VALUES 
+    (1, 'Capuccino', 2, 50000),
+    (1, 'Banh Mi', 1, 20000),
+    (2, 'Espresso', 3, 60000),
+    (2, 'Croissant', 2, 40000);
