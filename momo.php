@@ -2,10 +2,10 @@
 header('Content-Type: text/html; charset=UTF-8');
 
 // Kết nối với MySQL bằng XAMPP
-$servername = "localhost";  // Tên máy chủ MySQL (thường là 'localhost' trên XAMPP)
-$username = "root";         // Tên người dùng MySQL (thường là 'root' trên XAMPP)
-$password = "";             // Mật khẩu MySQL (thường là trống trên XAMPP)
-$dbname = "thanhtoan";  // Thay thế 'your_database' bằng tên cơ sở dữ liệu của bạn
+$servername = "localhost";
+$username = "root"; 
+$password = "";   
+$dbname = "thanhtoan";
 
 // Tạo kết nối
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -60,30 +60,6 @@ if ($conn->connect_error) {
         .btn-back:hover, .btn-confirm:hover, .btn-delete:hover, .btn-add:hover {
             background-color: #45a049;
         }
-        .btn-delete {
-            background-color: #f44336;
-        }
-        .btn-delete:hover {
-            background-color: #e53935;
-        }
-        .order-summary {
-            text-align: left;
-            margin-top: 20px;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        .order-summary h3 {
-            margin-top: 0;
-        }
-        .order-summary p {
-            margin: 5px 0;
-        }
-        .order-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
@@ -97,24 +73,7 @@ if ($conn->connect_error) {
         <div class="qr-code">
             <img src="image/momo.jpg" alt="MoMo QR Code">
         </div>
-        <div class="order-summary">
-            <h3>Order Summary</h3>
-            <div class="order-item">
-                <p><strong>Sản phẩm:</strong> Coffee</p>
-                <p><strong>Số lượng:</strong> 2</p>
-                <p><strong>Giá:</strong> 200,000 VND</p>
-                <a href="#" class="btn-delete">Xóa</a>
-            </div>
-            <div class="order-item">
-                <p><strong>Sản phẩm:</strong> Tea</p>
-                <p><strong>Số lượng:</strong> 1</p>
-                <p><strong>Giá:</strong> 100,000 VND</p>
-                <a href="#" class="btn-delete">Xóa</a>
-            </div>
-            <p><strong>Tổng tiền:</strong> 500,000 VND</p>
-            <a href="#" class="btn-add">Thêm món</a>
-        </div>
-        <a href="#" class="btn-confirm">Đặt hàng</a>
+        <a href="camon.php" class="btn-confirm">Đặt hàng</a>
         <a href="#" class="btn-back">Trở lại mua sắm</a>
     </div>
 
