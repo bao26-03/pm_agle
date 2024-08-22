@@ -185,15 +185,43 @@
     }
 
     function checkout() {
-      if (cart.length > 0) {
-        alert(`Quét mã để thanh toán! ${document.getElementById("total-price").textContent}`);
-        cart = [];
-        updateCartDisplay();
-              window.location.href = 'qr.jpg'
-      } else {
+    if (cart.length > 0) {
+        // Prepare cart data
+        let cartData = cart.map(item => ({
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price
+        }));
+
+        // Create form data
+        let formData = new FormData();
+        formData.append('cart', JSON.stringify(cartData));
+        formData.append('customer_id', 1); // Replace with actual customer ID or use a form field
+
+        // Send data to PHP script
+        fetch('process_order.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert('Order placed successfully!');
+                cart = [];
+                updateCartDisplay();
+            } else {
+                alert('Error placing order.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error placing order.');
+        });
+    } else {
         alert("Giỏ hàng trống, không thể thanh toán.");
-      }
     }
+}
+
     function printInvoice() {
   if (cart.length > 0) {
     let invoiceContent = `
