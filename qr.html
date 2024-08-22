@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Mã QR</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #qr-code {
+      max-width: 256px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mã QR của bạn</h1>
+    <div id="qr-code"></div>
+    <p>Quét mã thanh toán</p>
+  </div>
+
+  <script src=""></script>
+  <script>
+    // Thay đổi giá trị URL này thành URL mà bạn muốn người dùng truy cập
+    var url = 'https://www.example.com';
+
+    new QRCode(document.getElementById('qr-code'), {
+      text: url,
+      width: 256,
+      height: 256,
+      colorDark: '#000000',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>

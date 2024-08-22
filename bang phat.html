@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bảng Xử Phạt</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bảng Xử Phạt</h1>
+  <table id="dataTable">
+    <tr>
+      <th>Tên Nhân Viên</th>
+      <th>Chức Vụ</th>
+      <th>Lỗi Phạm</th>
+      <th>Tiền Phạt</th>
+    </tr>
+    <tr>
+      <td><input type="text" value="Nguyễn Văn A"></td>
+      <td><input type="text" value="Quản Lý Bán Hàng"></td>
+      <td><input type="text" value="Không hoàn thành chỉ tiêu doanh số"></td>
+      <td><input type="text" value="50,000 VND"></td>
+    </tr>
+    <tr>
+      <td><input type="text" value="Trần Thị B"></td>
+      <td><input type="text" value="Nhân Viên Kế Toán"></td>
+      <td><input type="text" value="Sai sót trong báo cáo tài chính"></td>
+      <td><input type="text" value="30,000 VND"></td>
+    </tr>
+    <tr>
+      <td><input type="text" value="Lê Văn C"></td>
+      <td><input type="text" value="Trưởng Phòng Nhân Sự"></td>
+      <td><input type="text" value="Chậm hoàn thành nhiệm vụ"></td>
+      <td><input type="text" value="40,000 VND"></td>
+    </tr>
+  </table>
+  <br>
+  <button onclick="exportToExcel()">Xuất ra Excel</button>
+  <button onclick="exportToPdf()">Xuất ra PDF</button>
+
+  <script>
+    function exportToExcel() {
+      // Lấy dữ liệu từ bảng
+      var table = document.getElementById("dataTable");
+      var rows = table.getElementsByTagName("tr");
+      var data = [];
+
+      for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td input");
+        for (var j = 0; j < cols.length; j++) {
+          row.push(cols[j].value);
+        }
+        data.push(row);
+      }
+
+      // Tạo file Excel và tải về
+      var workbook = XLSX.utils.book_new();
+      var worksheet = XLSX.utils.aoa_to_sheet(data);
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Bảng Xử Phạt");
+      XLSX.writeFile(workbook, "bang_xu_phat.xlsx");
+    }
+
+    function exportToPdf() {
+      // Lấy dữ liệu từ bảng
+      var table = document.getElementById("dataTable");
+      var rows = table.getElementsByTagName("tr");
+      var data = [];
+
+      for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td input");
+        for (var j = 0; j < cols.length; j++) {
+          row.push(cols[j].value);
+        }
+        data.push(row);
+      }
+
+      // Tạo file PDF và tải về
+      var doc = new jsPDF();
+      doc.autoTable({
+        head: data[0],
+        body: data.slice(1)
+      });
+      doc.save("bang_xu_phat.pdf");
+    }
+
+    // Thêm thư viện Excel.js và jsPDF.js
+    var excelScript = document.createElement("script");
+    excelScript.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js";
+    document.head.appendChild(excelScript);
+
+    var pdfScript = document.createElement("script");
+    pdfScript.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js";
+    document.head.appendChild(pdfScript);
+  </script>
+</body>
+</html>

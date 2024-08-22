@@ -13,7 +13,7 @@ $item = $result->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Item</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="edit.css">
 </head>
 <body>
     <h1>Edit Item</h1>
